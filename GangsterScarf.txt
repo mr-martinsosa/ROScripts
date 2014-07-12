@@ -1,0 +1,96 @@
+//===== Reddit RO Script =====================================
+//= Gangster Scarf Quest
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= A quest to get the headgear item Gangster Scarf (5361)
+//===== Additional Comments: =================================
+//= 1.0 First release
+
+gef_tower 70,172,5 		script Gangster Mage	2561{
+	if (GANGSTER_QUEST == 9000) goto L_PLSGO;
+	
+	mes "[Gangster Mage]";
+	mes "Fire Bolt! Spider Web! Stone Curse!";
+	next;
+	menu "What are you doing?";
+	
+	mes "[Gangster Mage]";
+	mes "I'm preparing for the Geffen Tournament!";
+	mes "As you can see, my form is top-notch!";
+	emotion e_heh;
+	next;
+	menu "Can I have that scarf?" -,- "Alright, good luck!", M_NO;
+	
+	mes "[Gangster Mage]";
+	mes "This ol' thing? I don't even know why I wear it, it's useless!";
+	emotion e_heh;
+	mes "I'll trade you these items for it!";
+	next;
+	goto L_List;
+
+L_List:	
+	mes "^8080FFGangster Mask^000000";
+	mes "^8080FFScarlet Dyestuffs^000000";
+	mes "^8080FFSucsamad^000000";
+	mes "^8080FFAmethyst^000000";
+	mes "^8080FF50 Burning Hearts^000000";
+	mes "^And 30,000z!";
+	next;
+	mes "Hop to it!"
+	emotion e_pif;
+	close;
+
+M_NO:
+	mes "[Gangster Mage]";
+	mes "I'm sure to win!";
+	emotion e_heh;
+	close;
+
+L_Make:
+	mes "[Gangster Mage]";
+	mes "Let's make...uh trade for the scarf!"
+	next;
+	if(countitem(2265) < 1 || countitem(975) < 1 ||	countitem(1236) < 1 || countitem(719) < 1 ||
+	countitem(7097) < 50 ||) goto L_NOITEMS;
+	if(Zeny < 30000) goto L_NOITEMS;
+	
+	delitem 2265, 1;
+	delitem 975, 1;
+	delitem 1236, 1;
+	delitem 719, 1;
+	delitem 7097, 50;
+	
+	mes "[Gangster Mage]";
+	mes "Thanks! Here you go!";
+	next;
+	getitem 5361, 1;
+	set GANGSTER_QUEST, 9000;
+	mes "[Gangster Mage]";
+	mes "Yeah, I totally just made you one. I actually like my scarf~";
+	emotion e_cry;
+	mes "See ya! Back to training!";
+	emotion e_scissors;
+	close;
+	
+	
+
+L_NOITEMS:
+	mes "[Gangster Mage]";
+	mes "Uh...I think you're missing something there...?";
+	emotion e_hmm;
+	mes "Here's the list again!:";
+	next;
+	goto L_List;
+
+L_PLSGO:
+	mes "[Gangster Mage]";
+	mes "Killing Cloud! Venom Dust! Venom Splasher! Poisonous Smoke! Poison Burst!"
+	next;
+	mes "[Gangster Mage]";
+	mes "...why are you still here? Shoo, I'm busy trying to Preserve poison skills here."
+	emotion e_omg{,1};
+	close;
+	
