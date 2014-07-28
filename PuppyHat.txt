@@ -1,0 +1,77 @@
+//===== Reddit RO Script =====================================
+//= Puppy Hat Quest
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= A quest to get the headgear item Puppy Hat (5182)
+//===== Additional Comments: =================================
+//= 1.0 First release
+
+	
+lighthalzen,96,167,5	script	Doge	81,{
+	mes "[Doge]";
+	mes "Wow such power much skill very pro";
+	next;
+	menu "...Are you talking?",-;
+	
+	mes "[Doge]";
+	mes "Much wisdom so smart great doge";
+	next;
+	menu "Can....I have you...",M_YES,"I hate you and this meme, goodbye.",M_NO;
+	next;
+	
+M_YES:
+	mes "[Doge]";
+	mes "Great doge much adventure will sit on head";
+	emotion e_heh;
+	next;
+	mes "Many items need";
+	next;
+	menu "What do I need?",L_List,"Many items get",L_Make,"Nope, too much work.",M_NO;
+	next;
+
+L_List:	
+	mes "3 Puppy Headbands";
+	mes "100 Golden Hair";
+	mes "1 Hair band";
+	next;
+	mes "such grind very fun";
+	emotion e_heh;
+	close;
+
+M_NO:
+	mes "[Doge]";
+	mes "much sadness very jerk so sad";
+	close;
+
+L_Make:
+	mes "[Doge]";
+	mes "much magic such skill nice items";
+	next;
+
+	if(countitem(5118) < 3 || countitem(1060) < 100 ||	countitem(2210) < 1 ) goto L_NOITEMS;
+	
+	delitem 5118,3;
+	delitem 1060,100;
+	delitem 2210,1;
+	
+	mes "[Doge]";
+	mes "much lie doge stay";
+	next;
+	getitem 5182, 1;
+	mes "[Doge]";
+	mes "such doll so kawaii very powerful";
+	close;
+	
+L_NOITEMS:
+	mes "[Doge]";
+	mes "much lie no item very hard";
+	emotion e_hmm;
+	mes "wow such list:";
+	next;
+	goto L_List;
+
+	
+}
