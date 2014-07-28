@@ -9,37 +9,41 @@
 //===== Additional Comments: =================================
 //= 1.0 First release
 
-gef_tower 70,172,5 		script Gangster Mage	2561{
+gef_tower,70,172,5	script	Gangster Mage	755,{
 	if (GANGSTER_QUEST == 9000) goto L_PLSGO;
 	
 	mes "[Gangster Mage]";
 	mes "Fire Bolt! Spider Web! Stone Curse!";
 	next;
-	menu "What are you doing?";
+	menu "What are you doing?",-;
 	
 	mes "[Gangster Mage]";
 	mes "I'm preparing for the Geffen Tournament!";
 	mes "As you can see, my form is top-notch!";
 	emotion e_heh;
 	next;
-	menu "Can I have that scarf?" -,- "Alright, good luck!", M_NO;
+	menu "Can I have that scarf?",M_YES,"Alright, good luck!",M_NO;
+	next;
 	
+M_YES:
 	mes "[Gangster Mage]";
 	mes "This ol' thing? I don't even know why I wear it, it's useless!";
 	emotion e_heh;
-	mes "I'll trade you these items for it!";
 	next;
-	goto L_List;
+	mes "I'll trade you for it!";
+	next;
+	menu "What do I need?",L_List,"I have the items you asked for",L_Make,"I changed my mind...",M_NO;
+	next;
 
 L_List:	
-	mes "^8080FFGangster Mask^000000";
-	mes "^8080FFScarlet Dyestuffs^000000";
-	mes "^8080FFSucsamad^000000";
-	mes "^8080FFAmethyst^000000";
-	mes "^8080FF50 Burning Hearts^000000";
-	mes "^And 30,000z!";
+	mes "Gangster Mask";
+	mes "Scarlet Dyestuffs";
+	mes "Sucsamad";
+	mes "Amethyst";
+	mes "50 Burning Hearts";
+	mes "And 30,000z!";
 	next;
-	mes "Hop to it!"
+	mes "Hop to it!";
 	emotion e_pif;
 	close;
 
@@ -51,18 +55,19 @@ M_NO:
 
 L_Make:
 	mes "[Gangster Mage]";
-	mes "Let's make...uh trade for the scarf!"
+	mes "Let's make...uh trade for the scarf!";
 	next;
+
 	if(countitem(2265) < 1 || countitem(975) < 1 ||	countitem(1236) < 1 || countitem(719) < 1 ||
-	countitem(7097) < 50 ||) goto L_NOITEMS;
+	countitem(7097) < 50 ) goto L_NOITEMS;
 	if(Zeny < 30000) goto L_NOITEMS;
 	
-	delitem 2265, 1;
-	delitem 975, 1;
-	delitem 1236, 1;
-	delitem 719, 1;
-	delitem 7097, 50;
-	set Zeny, Zeny - 30000;
+	delitem 2265,1;
+	delitem 975,1;
+	delitem 1236,1;
+	delitem 719,1;
+	delitem 7097,50;
+	set Zeny,zeny-30000;
 	
 	mes "[Gangster Mage]";
 	mes "Thanks! Here you go!";
@@ -76,8 +81,6 @@ L_Make:
 	emotion e_scissors;
 	close;
 	
-	
-
 L_NOITEMS:
 	mes "[Gangster Mage]";
 	mes "Uh...I think you're missing something there...?";
@@ -88,10 +91,11 @@ L_NOITEMS:
 
 L_PLSGO:
 	mes "[Gangster Mage]";
-	mes "Killing Cloud! Venom Dust! Venom Splasher! Poisonous Smoke! Poison Burst!"
+	mes "Killing Cloud! Venom Dust! Venom Splasher! Poisonous Smoke! Poison Burst!";
 	next;
 	mes "[Gangster Mage]";
-	mes "...why are you still here? Shoo, I'm busy trying to Preserve poison skills here."
-	emotion e_omg{,1};
+	mes "...why are you still here? Shoo, I'm busy trying to Preserve poison skills here.";
+	emotion e_omg,1;
 	close;
 	
+}
