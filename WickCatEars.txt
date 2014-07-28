@@ -1,0 +1,90 @@
+//===== Reddit RO Script =====================================
+//= Wickebine's Cat Ears Quest
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= A quest to get the headgear item Wickebine's Cat Ears (5360)
+//===== Additional Comments: =================================
+//= 1.0 First release
+
+veins,108,63,3	script	Tres	497,{
+	if (CATEAR_QUEST == 9000) goto L_PLSGO;
+	
+	mes "[Tres]";
+	mes "Hi there.";
+	next;
+	menu "Sooooooooooooo....",-;
+	
+	mes "[Tres]";
+	mes "What is it?";
+	mes "Why is everyone bothering me today?";
+	emotion e_hum;
+	next;
+	menu "Can you fix my Cat Ears?",M_YES,"Fine I'm outta here you edgy kid.",M_NO;
+	next;
+	
+M_YES:
+	mes "[Tres]";
+	mes "Is my sister still giving out fake Cat Ears? Ugh, whatever I'll fix em.";
+	next;
+	menu "What do you need?",L_List,"Here are the items~",L_Make,"Actually, I was just about to go...",M_NO;
+	next;
+
+L_List:	
+	mes "";
+	mes "40 Handcuffs";
+	mes "40 Black Cat Dolls";
+	mes "Fortune Sword";
+	mes "200,000 Zeny";
+	mes "And of course the Black Cat Ears.";
+	next;
+	mes "Get to work.";
+	emotion e_...;
+	close;
+
+M_NO:
+	mes "[Tres]";
+	mes "Never any peace around here...";
+	emotion e_bzz;
+	close;
+
+L_Make:
+	mes "[Tres]";
+	mes "Alright, let's get this over with.";
+	next;
+
+	if(countitem(7345) < 40 || countitem(7206) < 40 ||	countitem(1223) < 1 || countitem(5057) < 1) goto L_NOITEMS;
+	if(Zeny < 200000) goto L_NOITEMS;
+	
+	delitem 7345,40;
+	delitem 7206,40;
+	delitem 1223,1;
+	delitem 5057,1;
+	set Zeny,zeny-200000;
+	
+	mes "[Tres]";
+	mes "Looks like it worked. Here you go.";
+	next;
+	getitem 5360, 1;
+	set CATEAR_QUEST, 9000;
+	mes "[Tres]";
+	mes "Now shoo, and leave me be.";
+	close;
+	
+L_NOITEMS:
+	mes "[Tres]";
+	mes "Do you want these better ears or not?";
+	emotion e_ag;
+	mes "These are the items you need:";
+	next;
+	goto L_List;
+
+L_PLSGO:
+	mes "[Tres]";
+	mes "I've pulled the power out of your Cat Ears already, please leave me alone.";
+	emotion e_sigh;
+	close;
+	
+}
