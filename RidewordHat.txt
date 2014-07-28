@@ -1,0 +1,89 @@
+//===== Reddit RO Script =====================================
+//= Rideword Hat Quest
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= A quest to get the headgear item Rideword Hat (5208)
+//===== Additional Comments: =================================
+//= 1.0 First release
+
+c_tower1,257,37,6	script	Rideword	1195,{	
+	mes "[Rideword]";
+	mes "HELLO PUNY HUMAN.";
+	next;
+	menu "Excuse me?",-;
+	
+	mes "[Rideword]";
+	mes "I AM FEELING VERY GENEROUS TODAY, SO INSTEAD OF BITING YOUR HEAD OFF I WILL NOT.";
+	mes "HOWEVER, MY CHILDREN ARE VERY HUNGRY. CAN THEY BITE YOUR HEAD OFF?";
+	emotion e_ok;
+	next;
+	menu "...Will it kill me?",M_YES,"Nope, nope, nope, nope, I'm outta here.",M_NO;
+	next;
+	
+M_YES:
+	mes "[Rideword]";
+	mes "THEY WILL NOT KILL YOU...MAYBE. I REQUIRE SOME ITEMS TO HOLD BACK THEIR POWER.";
+	next;
+	menu "What do you need?",L_List,"Uh, here, take 'em.",L_Make,"And this is the part where I walk away...",M_NO;
+	next;
+
+L_List:	
+	mes "100 WORN OUT PAGES";
+	mes "2 BOOK OF BILLOWS";
+	mes "2 BOOK OF MOTHER EARTH";
+	mes "1 BOOK OF THE BLAZING SUN";
+	mes "1 BOOK OF GUST OF WIND";
+	mes "AND 200 BOOKCLIP IN MEMORY";
+	next;
+	mes "NOW GO GET THEM.";
+	percentheal -5, -5;
+	emotion e_...;
+	close;
+
+M_NO:
+	mes "[Rideword]";
+	mes "HUMAN YOU DARE WASTE MY TIME?";
+	mes "TIGER CANNON!";
+	emotion e_gg;
+	percentheal -50,-50;
+	close;
+
+L_Make:
+	mes "[Rideword]";
+	mes "GIVE ME THE ITEMS.";
+	next;
+
+	if(countitem(1097) < 100 || countitem(1553) < 2 || countitem(1554) < 2 || countitem(1555) < 1 || countitem(1556) < 1 || countitem(7015) < 200) goto L_NOITEMS;
+	
+	delitem 1097,100;
+	delitem 1553,2;
+	delitem 1554,2;
+	delitem 1555,1;
+	delitem 1556,1;
+	delitem 7015,200;
+	
+	mes "[Rideword]";
+	mes "BE NICE TO MY CHILD, HUMAN. OR ELSE.";
+	next;
+	getitem 5208, 1;
+	mes "[Rideword]";
+	mes "COME BACK IF YOU WANT MORE OF MY CHILDREN EATING YOUR HEAD.";
+	emotion e_heh;
+	percentheal -5, -5;
+	close;
+	
+L_NOITEMS:
+	mes "[Rideword]";
+	mes "YOU CONTINUE TO PLAY GAMES WITH ME, CHILD?";
+	mes "GATE OF HELL!";
+	emotion e_gg;
+	percentheal -99, -99;
+	mes "STOP SCREWING AROUND AND BRING ME MY ITEMS:";
+	next;
+	goto L_List;
+
+	
+}
