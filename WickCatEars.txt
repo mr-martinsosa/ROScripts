@@ -33,7 +33,6 @@ M_YES:
 	next;
 
 L_List:	
-	mes "";
 	mes "40 Handcuffs";
 	mes "40 Black Cat Dolls";
 	mes "Fortune Sword";
@@ -55,7 +54,7 @@ L_Make:
 	mes "Alright, let's get this over with.";
 	next;
 
-	if(countitem(7345) < 40 || countitem(7206) < 40 ||	countitem(1223) < 1 || countitem(5057) < 1) goto L_NOITEMS;
+	if(countitem(7345) < 40 || countitem(7206) < 40 || countitem(1223) < 1 || countitem(5057) < 1) goto L_NOITEMS;
 	if(Zeny < 200000) goto L_NOITEMS;
 	
 	delitem 7345,40;
