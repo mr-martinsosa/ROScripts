@@ -62,7 +62,7 @@ L_Make:
 	delitem 1236, 1;
 	delitem 719, 1;
 	delitem 7097, 50;
-	setZeny, Zeny - 30000;
+	set Zeny, Zeny - 30000;
 	
 	mes "[Gangster Mage]";
 	mes "Thanks! Here you go!";
