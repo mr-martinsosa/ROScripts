@@ -12,8 +12,8 @@
 comodo,188,162,5	script	Fashionista	606,{
 
 	mes "[Fashionista]";  
-    mes "As someone who believes in fashion and beauty,";
-    mes "I can make many accessories and hats!";
+	mes "As someone who believes in fashion and beauty,";
+	mes "I can make many accessories and hats!";
     
 	menu "Can I have a list?",H_CHOICE, "I think I'm fashionable enough.",N_CLOSE;
 
