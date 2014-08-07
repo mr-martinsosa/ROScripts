@@ -33,14 +33,14 @@ M_YES:
 	next;
 
 L_List:	
-	mes "40 Handcuffs";
-	mes "40 Black Cat Dolls";
-	mes "Fortune Sword";
-	mes "200,000 Zeny";
+	mes "100x Handcuffs";
+	mes "500x Black Cat Dolls";
+	mes "1x Fortune Sword";
+	mes "2,000,000 Zeny";
 	mes "And of course the Black Cat Ears.";
 	next;
 	mes "Get to work.";
-	emotion e_...;
+	emotion e_dots;
 	close;
 
 M_NO:
@@ -54,14 +54,14 @@ L_Make:
 	mes "Alright, let's get this over with.";
 	next;
 
-	if(countitem(7345) < 40 || countitem(7206) < 40 || countitem(1223) < 1 || countitem(5057) < 1) goto L_NOITEMS;
+	if(countitem(7345) < 100 || countitem(7206) < 500 || countitem(1223) < 1 || countitem(5057) < 1) goto L_NOITEMS;
 	if(Zeny < 200000) goto L_NOITEMS;
 	
-	delitem 7345,40;
-	delitem 7206,40;
+	delitem 7345,100;
+	delitem 7206,500;
 	delitem 1223,1;
 	delitem 5057,1;
-	set Zeny,zeny-200000;
+	set Zeny,zeny-2000000;
 	
 	mes "[Tres]";
 	mes "Looks like it worked. Here you go.";

@@ -34,7 +34,7 @@ M_YES:
 
 L_List:	
 	mes "3 Puppy Headbands";
-	mes "100 Golden Hair";
+	mes "750 Golden Hair";
 	mes "1 Hair band";
 	next;
 	mes "such grind very fun";
@@ -51,10 +51,10 @@ L_Make:
 	mes "much magic such skill nice items";
 	next;
 
-	if(countitem(5118) < 3 || countitem(1060) < 100 ||	countitem(2210) < 1 ) goto L_NOITEMS;
+	if(countitem(5118) < 3 || countitem(1060) < 750 ||	countitem(2210) < 1 ) goto L_NOITEMS;
 	
 	delitem 5118,3;
-	delitem 1060,100;
+	delitem 1060,750;
 	delitem 2210,1;
 	
 	mes "[Doge]";
