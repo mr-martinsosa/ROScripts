@@ -1,0 +1,87 @@
+//===== Reddit RO Script =====================================
+//= Snake Hat Quest
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= A quest to get the headgear item Snake Hat (5388) 
+//===== Additional Comments: =================================
+//= 1.0 First release
+
+	
+Payon,269,220,3	script	Sssnake	1025,{
+	
+	if (SNAKE_QUEST == 9000) goto L_PLSGO;
+	
+	mes "[Sssnake]";
+	mes "Sssssssssssssss";
+	next;
+	menu "Die, Snake!",-;
+	
+	mes "[Sssnake]";
+	mes "How can you see me? I'm hiding in this box---Oh hell, someone took my box.";
+	next;
+	menu "You're a weird snake...",M_YES,"ALRIGHT LATER!",M_NO;
+	next;
+	
+M_YES:
+	mes "[Sssnake]";
+	mes "Can I hide on your head?";
+	next;
+	mes "I just need a bunch of stuff to stay on your head.";
+	next;
+	menu "What do I need?",L_List,"I got the stuff!",L_Make,"I don't think I want you on my head...",M_NO;
+	next;
+
+L_List:
+	mes "[Sssnake]"
+	mes "1000 Snake Scales";
+	mes "300 Horrendous Hair";
+	mes "100 Sticky Mucus";
+	mes "1 Sidewinder Card";
+	next;
+	mes "Good luck soldier.";
+	close;
+
+M_NO:
+	mes "[Sssnake]";
+	mes "Well, you make too much noise anyway.";
+	close;
+
+L_Make:
+	mes "[Sssnake]";
+	mes "Alright let's see if this works...";
+	next;
+
+	if(countitem(926) < 1000 || countitem(1048) < 300 ||	countitem(938) < 100 || countitem(4117) < 1 ) goto L_NOITEMS;
+	
+	delitem 926,1000;
+	delitem 1048,300;
+	delitem 938,100;
+	delitem 4117,1;
+	
+	mes "[Sssnake]";
+	mes "Well, my idea failed completely...but here's a doll of me to trick people chasing after me.";
+	next;
+	getitem 5388, 1;
+	mes "[Sssnake]";
+	mes "You make that distraction, I'll keep hiding here.";
+	set SNAKE_QUEST, 9000;
+	close;
+	
+L_NOITEMS:
+	mes "[Sssnake]";
+	mes "Where are the items?";
+	emotion e_hmm;
+	mes "Here's the list again:";
+	next;
+	goto L_List;
+	
+L_PLSGO:
+	mes "[Sssnake]";
+	mes "Why are you still here?! Get out of here before they see me!";
+	emotion e_omg;
+	close;
+	
+}

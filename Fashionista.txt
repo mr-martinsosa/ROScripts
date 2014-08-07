@@ -1,0 +1,982 @@
+//===== Reddit RO Script =====================================
+//= Fashionista NPC
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 0.8, Created the skeleton of the script.
+//===== Description: =========================================
+//= An NPC with a plethora of hats with quests.
+//===== Additional Comments: =================================
+//= 0.8 First release
+
+comodo,188,162,5	script	Fashionista	606,{
+
+	mes "[Fashionista]";  
+    mes "As someone who believes in fashion and beauty,";
+    mes "I can make many accessories and hats!";
+    
+	menu "Can I have a list?",H_CHOICE, "I think I'm fashionable enough.",N_CLOSE;
+
+H_CHOICE:
+	mes "[Fashionista]";
+	mes "Hat, Glasses, something for your mouth, a flashy back accessory, or an accessory or 2?";
+	mes "Maybe even a socket in a certain headgear?";
+	menu 
+		"Upper Headgear",H_UPPER,
+		"Middle Headgear",H_MID,
+		"Lower Headgear",H_LOW,
+		"Garment",G_GAR,
+		"Accessory",A_ACC,
+		"Socket an item",I_SOCKET,
+		"You know what I'm here for.",S_IMMUNE,
+		"Forget it.",N_CLOSE;
+	
+//___________UPPER HEADGEAR LIST___________//
+
+H_UPPER:
+	mes "[Fashionista]";
+	mes "Choose the headgear you would like to make.";
+	menu 
+		"Abysmal Knight Helm",H_Abysmal, //5363
+		"Black Shiba Inu Hat",H_Shiba, //18756
+		"Cat Ear Beret",H_CatEar, //18600
+		"Crown of Deceit",H_Crown,	//5564
+		"Drooping Alicel",H_Alicel,	//18630
+		"Evil Marching Hat",H_EvilMarch //18522
+		"Flapping Angel Wing",H_fAngel,	//5269
+		"Flapping Angeling",H_fAngeling, //5334
+		"Jejecap",H_Jeje,	//18885
+		"Kettle Hat",H_Kettle,	//5291
+		"King Poring Hat",H_KingPoring //18785
+		"Koneko Hat",H_Koneko,	//5372
+		"Linguistic Book Hat",H_Linguistic, //
+		"Little Feather Hat",H_LittleFeather,
+		"Mercury Riser",H_Mercury,
+		"Magic Eyes",H_MagicEyes,
+		"Necromancer's Hood",H_Necro,
+		"Pecopeco Hairband",H_Peco, //5286
+		"Purple Cowboy Hat",H_PCowboy, //5409
+		"Ramen Hat",H_Ramen,
+		"Red Beret",H_RedBeret,
+		"Red Glasses",H_RedGlasses,
+		"Red Pom Band",H_RedPom, //18601
+		"Satellite Hairband",H_Satellite,
+		"Side Cap",H_SideCap,
+		"Skull Cap",H_Skull,
+		"St Patrick's Hat",H_Patrick,
+		"Sunglasses Baseball Cap",H_Baseball,
+		"Tam",H_Tam, //5379
+		"Turkey On Your Head",H_Turkey,
+		"Vacation Hat",H_Vacation,
+		"Valkyrie Feather Band",H_Valkyrie,
+		"Witch's Pumpkin Hat",H_Witch, //18656
+		"Yggdrasil Crown",H_Yggdrasil,
+		"Cancel",N_CLOSE;
+		
+//___________MIDDLE HEADGEAR LIST___________//
+
+H_MID:
+	mes "[Fashionista]";
+	mes "Choose the headgear you would like to make.";
+	menu 
+		"3D Glasses",H_3D,
+		"Black Devil's Mask",H_BlackDevil,
+		"Black Frame Glasses",H_BlackFrame,
+		"Blinker",H_Blinker,
+		"Crown of Deceit",H_Crown,
+		"Gozarian Mask",H_Gozarian, //5475
+		"Hexagon Spectacles",H_Hexagon,
+		"Loki Mask",H_Loki,
+		"Mini Glasses",H_Mini,//18591
+		"Necromancer's Hood",H_Necro,
+		"Red Glasses",H_RedGlasses,
+		"Robo Eye",H_Robo,
+		"Sigrun's Wings",H_Sigrun, //5592
+		"Stunner Shades",H_Stunner,
+		"Takius Blindfold",H_Takius,
+		"Cancel",N_CLOSE;
+		
+//___________LOWER HEADGEAR LIST___________//
+
+H_LOW:
+	mes "[Fashionista]";
+	mes "Choose the headgear you would like to make.";
+	menu
+		"CD In Mouth",H_CD, //18666
+		"Evolved Pipe",H_ePipe,
+		"Four Leaf Clover",H_Clover,
+		"Gozarian Mask",H_Gozarian, //5475
+		"Loki Mask",H_Loki,
+		"Ninja Scroll",H_Ninja,
+		"Pirate Dagger",H_Pirate,
+		"Pirate Dagger R",H_PirateR,
+		"THE AMAZING RAINBOW SCARF",H_Rainbow,
+		"Rose Of Crimson",H_Crimson,
+		"Umbala Spirit",H_Umbala, //18505
+		"Well-Chewed Pencil",H_Pencil, //5574		
+		"Cancel",N_CLOSE;
+
+//___________GARMENT LIST___________//
+
+G_GAR:
+	mes "[Fashionista]";
+	mes	"Choose the garment you would like to make.";
+	menu
+		"Fallen Angel Wing",G_Fallen,
+		"Heroic Backpack",G_Backpack, //2576
+		"Cancel",N_CLOSE;
+
+//___________ACCESSORY LIST___________//	
+
+A_ACC:
+	mes "[Fashionista]";
+	mes	"Choose the accessory you would like to make.";
+	menu
+		"All in One Ring",A_All,
+		"Fidelity Necklace",A_Fidelity, //2959
+		"RWC 2012 Ring",A_RWCRing, //2966
+		"RWC 2012 Pendant",A_RWCPendant, //2968
+		"Sound Amplifier",A_Sound, //2899
+		"Cancel",N_CLOSE;
+
+//___________SOCKET LIST___________//
+
+I_SOCKET:
+	mes "[Fashionista]";
+	mes	"Choose the item you would like to socket.";
+	mes "Be warned, all refinements will be lost.";
+	menu
+		"Angel Wing Ears",I_ANGELEAR, //18518
+		"Chambered RWC 2012 Ring",I_CHAMBERED,
+		"Dark Blinder",I_BLINDER,
+		"Elven Ears",I_ELVEN,
+		"Wing of Diablo (Evil Wing Ears)",I_WINGOFDIABLO //18519
+		"Cancel",N_CLOSE;
+
+//___________BUT WHAT IS THIS PERSON ACTUALLY HERE FOR?????????___________//
+
+S_IMMUNE:
+	mes "[Fashionista]";
+	mes "Oh boy, you're not here for *THAT*, are you?";
+	mes "You're gonna need a lot of stuff for this, kid...";
+	
+	next;
+	
+	mes "[Fashionista]";
+	mes "You're going to need..."';
+	
+	next;
+	
+	mes "list";
+	
+	next;
+	
+	mes "Do you have it now?"
+	menu "Yes, all here.",S_YES,"Hell no, that's ridiculous.",N_CLOSE;
+
+//___________ITEM REQUIREMENTS UPPER___________//
+
+H_Abysmal:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+	
+	mes "1x Bucket Hat [1]";
+    mes "300x Reins";
+    mes "10x Black Dyestuff";
+	mes "2x Blade Lost in Darkness";
+    menu "Here ya go.",M_Abysmal,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Shiba:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+	
+	mes "1x Ulle's Cap[1]";
+	mes "1x Puppy Hat";
+	mes "100x Fur";
+	menu "Here ya go.",M_Shiba,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Crown:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Crown,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Alicel:	
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Alicel,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_EvilMarch:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_EvilMarch,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_fAngel:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_fAngel,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_fAngeling:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_fAngeling,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Jeje:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Jeje,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Kettle:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Kettle,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_KingPoring:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_KingPoring,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Koneko:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Koneko,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Linguistic:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Linguistic,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_LittleFeather:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_LittleFeather,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Mercury:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Mercury,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_MagicEyes:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_MagicEyes,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Necro:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Necro,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Peco:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Peco,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Ramen:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Ramen,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_RedBeret:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_RedBeret,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_RedGlasses:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_RedGlasses,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_RedPom:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_RedPom,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Satellite:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Satellite,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_SideCap:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_SideCap,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Patrick:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Patrick,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Skull:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Skull,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Baseball:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Baseball,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Tam:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Tam,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Turkey:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Turkey,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Vacation:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Vacation,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Valkyrie:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Valkyrie,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Witch:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Witch,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Yggdrasil:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Yggdrasil,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	
+//___________ITEM REQUIREMENTS MIDDLE___________//
+
+H_3D:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_3D,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_BlackDevil:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_BlackDevil,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_BlackFrame:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_BlackFrame,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Blinker:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Blinker,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Gozarian:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Gozarian,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Hexagon:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Hexagon,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Loki:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Loki,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Mini:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Mini,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_RedGlasses:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_RedGlasses,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Robo:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Robo,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Sigrun:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Sigrun,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Stunner:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Stunner,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Takius:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Takius,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+//___________ITEM REQUIREMENTS LOWER___________//
+
+H_CD:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_CD,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_ePipe:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_ePipe,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Clover:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Clover,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Ninja:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Ninja,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Pirate:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Pirate,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_PirateR:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_PirateR,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Rainbow:
+	next;
+	mes "[Fashionista]";
+	mes "My greatest creation..."
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Rainbow,"Return to Menu",H_CHOICE, "It's too fruity, nope.",N_CLOSE;
+
+H_Crimson:
+	next;
+	mes "[Fashionista]";
+	mes "Heh, have fun making this one..."
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Crimson,"Return to Menu",H_CHOICE, "Yeah, no.",N_CLOSE;
+
+H_Umbala:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Umbala,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Pencil:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Pencil,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+
+//___________ITEM REQUIREMENTS GARMENT___________//
+
+G_Fallen:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Fallen,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+G_Backpack:
+	next;
+	mes "[Fashionista]";
+	mes "Oh man, you're going to have with this one...";
+
+	mes "List"
+	menu "Here ya go.",M_Backpack,"Return to Menu",H_CHOICE, "That's insane, I'm out.",N_CLOSE;
+
+
+//___________ITEM REQUIREMENTS ACCESSORY___________//
+
+A_All:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_All,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+A_Fidelity:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Fidelity,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+A_RWCRING:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",A_RWCRING,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+A_RWCPendant:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_RWCPendant,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+A_Sound:
+	next;
+	mes "[Fashionista]";
+	mes "...I really don't want to make this. It's really annoying.";
+	mes "...but here's the list.
+
+	mes "List"
+	menu "Here ya go.",M_Sound,"Return to Menu",H_CHOICE, "Nopeeeeeeee. Later.",N_CLOSE;
+
+
+//___________ITEM REQUIREMENTS SOCKET___________//
+
+I_ANGELEAR:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_ANGELEAR,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	
+I_CHAMBERED:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_CHAMBERED,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_BLINDER:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_BLINDER,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_ELVEN:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_ELVEN,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_WINGOFDIABLO:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_WINGOFDIABLO,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+
+//___________MAKE ITEM UPPER___________//       
+M_Abysmal:
+        if(countitem(5120)<1 || countitem(1064)<100 || countitem(983)<10 || countitem(7023)<2)
+        goto M_insufficient;
+        delitem 5120,1;
+        delitem 1064,100;
+        delitem 983,10;
+		delitem 7023,2;
+		
+		mes "[Fashionista]";
+		mes "Thanks, here ya go.";
+	
+        getitem 5363,1;
+        close;
+
+M_Shiba:
+        if(countitem(5123)<1 || countitem(5182)<1 || countitem(6020)<100)
+        goto M_insufficient;
+        delitem 5123,1;
+        delitem 5182,1;
+        delitem 6020,100;
+		
+		mes "[Fashionista]";
+		mes "Thanks, here ya go.";
+	
+        getitem 18756,1;
+        close;
+
+M_Crown:
+	
+	
+M_Alicel:	
+
+
+M_EvilMarch:
+
+
+M_fAngel:
+
+
+M_fAngeling:
+
+
+M_Jeje:
+
+	
+M_Kettle:
+	
+
+M_KingPoring:
+
+
+M_Koneko:
+
+
+M_Linguistic:
+	
+	
+M_LittleFeather:
+
+
+M_Mercury:
+
+
+M_MagicEyes:
+
+
+M_Necro:
+
+
+M_Peco:
+
+
+M_Ramen:
+
+
+M_RedBeret:
+
+
+M_RedGlasses:
+
+
+M_RedPom:
+
+
+M_Satellite:
+
+
+M_SideCap:
+
+
+H_Patrick:
+
+
+M_Skull:
+
+
+M_Baseball:
+
+
+M_Tam:
+
+
+M_Turkey:
+
+
+M_Vacation:
+
+
+M_Valkyrie:
+
+
+M_Witch:
+
+
+M_Yggdrasil:		
+
+
+//___________MAKE ITEM MIDDLE___________//   
+
+M_3D:
+
+
+M_BlackDevil:
+
+
+M_BlackFrame:
+
+
+M_Blinker:
+
+
+M_Gozarian:
+
+
+M_Hexagon:
+
+
+M_Loki:
+
+
+M_Mini:
+
+
+M_RedGlasses:
+
+
+M_Robo:
+
+
+M_Sigrun:
+
+
+M_Stunner:
+
+
+M_Takius:
+
+//___________MAKE ITEM LOWER___________//   
+
+M_CD:
+
+
+M_ePipe:
+
+
+M_Clover:
+
+
+M_Ninja:
+
+
+M_Pirate:
+
+
+M_PirateR:
+
+
+M_Rainbow:
+
+
+M_Crimson:
+
+
+M_Umbala:
+
+
+M_Pencil:
+
+
+//___________MAKE ITEM GARMENT___________//   
+
+M_Fallen:
+
+
+M_Backpack:
+
+//___________MAKE ITEM ACCESSORY___________//   
+M_All:
+
+
+M_Fidelity:
+
+
+M_RWCRING:
+
+
+M_RWCPendant:
+
+
+M_Sound:
+
+//___________MAKE ITEM SOCKET___________//   
+
+M_ANGELEAR:
+
+	
+M_CHAMBERED:
+
+
+M_BLINDER:
+
+
+M_ELVEN:
+
+
+M_WINGOFDIABLO:
+
+	
+//___________INSUFFICIENT ITEMS___________//
+
+M_insufficient:
+        next;
+        mes "[Fashionista]";
+        mes "You don't have the required materials.";
+        mes "Get outta here, I don't work for free.";
+		emotion e_pif;
+        menu "Return to Main Menu",H_CHOICE,"Leave",N_CLOSE;
+        close;
+		
+//___________CLOSE NPC___________//
+
+N_CLOSE:
+	mes "[Fashionista]";
+	mes "Suit yourself.";
+	close;
