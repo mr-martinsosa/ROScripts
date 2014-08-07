@@ -182,10 +182,10 @@ H_Abysmal:
 	mes "You're going to need...";
 	
 	mes "1x Bucket Hat [1]";
-    mes "300x Reins";
-    mes "10x Black Dyestuff";
+	mes "300x Reins";
+	mes "10x Black Dyestuff";
 	mes "2x Blade Lost in Darkness";
-    menu "Here ya go.",M_Abysmal,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	menu "Here ya go.",M_Abysmal,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Shiba:
 	next;
