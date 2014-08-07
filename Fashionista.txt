@@ -49,28 +49,29 @@ H_UPPER:
 		"Kettle Hat",H_Kettle,	//5291
 		"King Poring Hat",H_KingPoring //18785
 		"Koneko Hat",H_Koneko,	//5372
-		"Linguistic Book Hat",H_Linguistic, //
-		"Little Feather Hat",H_LittleFeather,
-		"Mercury Riser",H_Mercury,
-		"Magic Eyes",H_MagicEyes,
-		"Necromancer's Hood",H_Necro,
+		"Linguistic Book Hat",H_Linguistic, //5422
+		"Little Feather Hat",H_LittleFeather, //18541
+		"Lord of the Dead Helm",H_LordOfDead, //18574
+		"Mercury Riser",H_Mercury, //18597
+		"Magic Eyes",H_MagicEyes, //5138
+		"Necromancer's Hood",H_Necro, //5502
 		"Pecopeco Hairband",H_Peco, //5286
 		"Purple Cowboy Hat",H_PCowboy, //5409
-		"Ramen Hat",H_Ramen,
-		"Red Beret",H_RedBeret,
-		"Red Glasses",H_RedGlasses,
+		"Ramen Hat",H_Ramen, //5293
+		"Red Beret",H_RedBeret, //5580
+		"Red Glasses",H_RedGlasses, //5288
 		"Red Pom Band",H_RedPom, //18601
-		"Satellite Hairband",H_Satellite,
-		"Side Cap",H_SideCap,
-		"Skull Cap",H_Skull,
-		"St Patrick's Hat",H_Patrick,
-		"Sunglasses Baseball Cap",H_Baseball,
+		"Satellite Hairband",H_Satellite, //5212
+		"Side Cap",H_SideCap, //5535
+		"Skull Cap",H_Skull, //18539
+		"St Patrick's Hat",H_Patrick, //18565
+		"Sunglasses Baseball Cap",H_Baseball, //18663
 		"Tam",H_Tam, //5379
-		"Turkey On Your Head",H_Turkey,
-		"Vacation Hat",H_Vacation,
-		"Valkyrie Feather Band",H_Valkyrie,
+		"Turkey On Your Head",H_Turkey, //5778
+		"Vacation Hat",H_Vacation, //5456
+		"Valkyrie Feather Band",H_Valkyrie, //5256
 		"Witch's Pumpkin Hat",H_Witch, //18656
-		"Yggdrasil Crown",H_Yggdrasil,
+		"Yggdrasil Crown",H_Yggdrasil, //18580
 		"Cancel",N_CLOSE;
 		
 //___________MIDDLE HEADGEAR LIST___________//
@@ -79,21 +80,21 @@ H_MID:
 	mes "[Fashionista]";
 	mes "Choose the headgear you would like to make.";
 	menu 
-		"3D Glasses",H_3D,
-		"Black Devil's Mask",H_BlackDevil,
-		"Black Frame Glasses",H_BlackFrame,
-		"Blinker",H_Blinker,
-		"Crown of Deceit",H_Crown,
+		"3D Glasses",H_3D, //5788
+		"Black Devil's Mask",H_BlackDevil, //18599
+		"Black Frame Glasses",H_BlackFrame, //5401
+		"Blinker",H_Blinker, //2295
+		"Crown of Deceit",H_Crown, //5464
 		"Gozarian Mask",H_Gozarian, //5475
-		"Hexagon Spectacles",H_Hexagon,
-		"Loki Mask",H_Loki,
+		"Hexagon Spectacles",H_Hexagon, //18676
+		"Loki Mask",H_Loki, //5332
 		"Mini Glasses",H_Mini,//18591
-		"Necromancer's Hood",H_Necro,
-		"Red Glasses",H_RedGlasses,
-		"Robo Eye",H_Robo,
+		"Necromancer's Hood",H_Necro, //5502
+		"Red Glasses",H_RedGlasses, //5288
+		"Robo Eye",H_Robo, //5325
 		"Sigrun's Wings",H_Sigrun, //5592
-		"Stunner Shades",H_Stunner,
-		"Takius Blindfold",H_Takius,
+		"Stunner Shades",H_Stunner, //18664
+		"Takius Blindfold",H_Takius, //5101
 		"Cancel",N_CLOSE;
 		
 //___________LOWER HEADGEAR LIST___________//
@@ -103,15 +104,15 @@ H_LOW:
 	mes "Choose the headgear you would like to make.";
 	menu
 		"CD In Mouth",H_CD, //18666
-		"Evolved Pipe",H_ePipe,
-		"Four Leaf Clover",H_Clover,
+		"Evolved Pipe",H_ePipe, //5220
+		"Four Leaf Clover",H_Clover, //5596
 		"Gozarian Mask",H_Gozarian, //5475
-		"Loki Mask",H_Loki,
-		"Ninja Scroll",H_Ninja,
-		"Pirate Dagger",H_Pirate,
-		"Pirate Dagger R",H_PirateR,
-		"THE AMAZING RAINBOW SCARF",H_Rainbow,
-		"Rose Of Crimson",H_Crimson,
+		"Loki Mask",H_Loki, //5332
+		"Ninja Scroll",H_Ninja, //5362
+		"Pirate Dagger",H_Pirate, //5305
+		"Pirate Dagger R",H_PirateR, //5532
+		"THE AMAZING RAINBOW SCARF",H_Rainbow, //5463
+		"Rose Of Crimson",H_Crimson, //5548
 		"Umbala Spirit",H_Umbala, //18505
 		"Well-Chewed Pencil",H_Pencil, //5574		
 		"Cancel",N_CLOSE;
@@ -122,7 +123,7 @@ G_GAR:
 	mes "[Fashionista]";
 	mes	"Choose the garment you would like to make.";
 	menu
-		"Fallen Angel Wing",G_Fallen,
+		"Fallen Angel Wing",G_Fallen, //2589
 		"Heroic Backpack",G_Backpack, //2576
 		"Cancel",N_CLOSE;
 
@@ -132,7 +133,7 @@ A_ACC:
 	mes "[Fashionista]";
 	mes	"Choose the accessory you would like to make.";
 	menu
-		"All in One Ring",A_All,
+		"All in One Ring",A_All, //2741
 		"Fidelity Necklace",A_Fidelity, //2959
 		"RWC 2012 Ring",A_RWCRing, //2966
 		"RWC 2012 Pendant",A_RWCPendant, //2968
@@ -147,15 +148,18 @@ I_SOCKET:
 	mes "Be warned, all refinements will be lost.";
 	menu
 		"Angel Wing Ears",I_ANGELEAR, //18518
-		"Chambered RWC 2012 Ring",I_CHAMBERED,
-		"Dark Blinder",I_BLINDER,
-		"Elven Ears",I_ELVEN,
+		"Black Devil's Mask",I_BLACKDEVIL, //18603
+		"Chambered RWC 2012 Ring",I_CHAMBEREDRING, //2967
+		"Chambered RWC 2012 Pendant",I_CHAMBEREDPENDANT, //2969
+		"Dark Blinder",I_BLINDER, //18609
+		"Elven Ears",I_ELVEN, //18507
+		"Vacation Hat",I_VACATION, //5287
 		"Wing of Diablo (Evil Wing Ears)",I_WINGOFDIABLO //18519
 		"Cancel",N_CLOSE;
 
 //___________BUT WHAT IS THIS PERSON ACTUALLY HERE FOR?????????___________//
 
-S_IMMUNE:
+S_IMMUNE: //2168
 	mes "[Fashionista]";
 	mes "Oh boy, you're not here for *THAT*, are you?";
 	mes "You're gonna need a lot of stuff for this, kid...";
@@ -284,6 +288,14 @@ H_LittleFeather:
 
 	mes "List"
 	menu "Here ya go.",M_LittleFeather,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_LordOfDead:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_LordOfDead,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Mercury:
 	next;
@@ -700,14 +712,30 @@ I_ANGELEAR:
 
 	mes "List"
 	menu "Here ya go.",M_ANGELEAR,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
-	
-I_CHAMBERED:
+
+I_BLACKDEVIL:
 	next;
 	mes "[Fashionista]";
 	mes "You're going to need...";
 
 	mes "List"
-	menu "Here ya go.",M_CHAMBERED,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	menu "Here ya go.",M_BLACKDEVIL,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	
+I_CHAMBEREDRING:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_CHAMBEREDRING,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_CHAMBEREDPENDANT:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_CHAMBEREDPENDANT,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 I_BLINDER:
 	next;
@@ -724,6 +752,14 @@ I_ELVEN:
 
 	mes "List"
 	menu "Here ya go.",M_ELVEN,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_VACATION:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_VACATION,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 I_WINGOFDIABLO:
 	next;
@@ -794,6 +830,7 @@ M_Linguistic:
 	
 M_LittleFeather:
 
+M_LordOfDead:
 
 M_Mercury:
 
@@ -950,14 +987,24 @@ M_Sound:
 
 M_ANGELEAR:
 
+
+M_BLACKDEVIL:
+
+
 	
-M_CHAMBERED:
+M_CHAMBEREDRING:
+
+
+M_CHAMBEREDPENDANT:
 
 
 M_BLINDER:
 
 
 M_ELVEN:
+
+
+M_VACATION:
 
 
 M_WINGOFDIABLO:
