@@ -121,7 +121,7 @@ H_LOW:
 
 G_GAR:
 	mes "[Fashionista]";
-	mes	"Choose the garment you would like to make.";
+	mes "Choose the garment you would like to make.";
 	menu
 		"Fallen Angel Wing",G_Fallen, //2589
 		"Heroic Backpack",G_Backpack, //2576
@@ -131,7 +131,7 @@ G_GAR:
 
 A_ACC:
 	mes "[Fashionista]";
-	mes	"Choose the accessory you would like to make.";
+	mes "Choose the accessory you would like to make.";
 	menu
 		"All in One Ring",A_All, //2741
 		"Fidelity Necklace",A_Fidelity, //2959
@@ -144,7 +144,7 @@ A_ACC:
 
 I_SOCKET:
 	mes "[Fashionista]";
-	mes	"Choose the item you would like to socket.";
+	mes "Choose the item you would like to socket.";
 	mes "Be warned, all refinements will be lost.";
 	menu
 		"Angel Wing Ears",I_ANGELEAR, //18518
