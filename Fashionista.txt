@@ -3,11 +3,12 @@
 //===== By: ==================================================
 //= Martin
 //===== Current Version: =====================================
-//= 0.8, Created the skeleton of the script.
+//= 0.9, Hat Requirements.
 //===== Description: =========================================
 //= An NPC with a plethora of hats with quests.
 //===== Additional Comments: =================================
-//= 0.8 First release
+//= 0.8 Skeleton Code
+//= 0.9 Added in more hats and requirements
 
 comodo,188,162,5	script	Fashionista	606,{
 
@@ -135,6 +136,7 @@ A_ACC:
 	menu
 		"All in One Ring",A_All, //2741
 		"Fidelity Necklace",A_Fidelity, //2959
+		"Lucky Clip", A_Lucky, //2742
 		"RWC 2012 Ring",A_RWCRing, //2966
 		"RWC 2012 Pendant",A_RWCPendant, //2968
 		"Sound Amplifier",A_Sound, //2899
@@ -206,7 +208,15 @@ H_Crown:
 	mes "[Fashionista]";
 	mes "You're going to need...";
 
-	mes "List"
+	mes "1x Crown,";
+	mes "1x Tiara,";
+	mes "1x Jewel Crown,";
+	mes "2x Gold,";
+	mes "1x Scarlet Dyestuff,";
+	mes "100 Level 3 Fire Bolt Scrolls,";
+	mes "100 Level 3 Cold Bolt Scrolls,";
+	mes "and 100 Level 3 Lightening Bolt Scrolls.";
+	
 	menu "Here ya go.",M_Crown,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Alicel:	
@@ -214,7 +224,12 @@ H_Alicel:
 	mes "[Fashionista]";
 	mes "You're going to need...";
 
-	mes "List"
+	mes "100x Rusty Screws,"; 
+	mes "50x Eluniums,";
+	mes "1x Rosa Shield,";
+	mes "100x Burnt Parts,";
+	mes "and 100x Solid Iron Pieces.";
+	
 	menu "Here ya go.",M_Alicel,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_EvilMarch:
@@ -676,6 +691,14 @@ A_Fidelity:
 
 	mes "List"
 	menu "Here ya go.",M_Fidelity,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	
+A_Lucky:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Lucky,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 A_RWCRING:
 	next;
@@ -973,6 +996,9 @@ M_All:
 
 
 M_Fidelity:
+
+
+M_Lucky:
 
 
 M_RWCRING:
