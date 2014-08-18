@@ -71,6 +71,7 @@ H_UPPER:
 		"Turkey On Your Head",H_Turkey, //5778
 		"Vacation Hat",H_Vacation, //5456
 		"Valkyrie Feather Band",H_Valkyrie, //5256
+		"Vanargrand Helm", H_Vanar, //18652
 		"Witch's Pumpkin Hat",H_Witch, //18656
 		"Yggdrasil Crown",H_Yggdrasil, //18580
 		"Cancel",N_CLOSE;
@@ -447,6 +448,14 @@ H_Valkyrie:
 
 	mes "List"
 	menu "Here ya go.",M_Valkyrie,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_Vanar:
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here ya go.",M_Vanar,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Witch:
 	next;
@@ -904,6 +913,9 @@ M_Vacation:
 
 
 M_Valkyrie:
+
+
+M_Vanar:
 
 
 M_Witch:
