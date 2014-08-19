@@ -236,10 +236,11 @@ H_Chibi:
 	mes "[Fashionista]";
 	mes "You're going to need...";
 	
-	mes "1x Ulle's Cap[1]";
-	mes "1x Puppy Hat";
-	mes "100x Fur";
-	menu "Here ya go.",M_Chibi,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	mes "200x Suspicious Hats"; //7567
+	mes "1x Divine Cloth"; //2366
+	mes "1x High Fashion Sandals"; //2422
+	mes "and 1x Dress Hat"; //5211
+	menu "...She's so cute...I want it!",M_Chibi,"Return to Menu",H_CHOICE, "Not worth the jailtime.",N_CLOSE;
 
 H_Crown:
 	next;
@@ -673,8 +674,13 @@ H_Ninja:
 	mes "[Fashionista]";
 	mes "You're going to need...";
 
-	mes "List"
-	menu "Here ya go.",M_Ninja,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	mes "20x Worn Out Scrolls"; //618
+	mes "20x Amulets"; //609
+	mes "1x Ninja Suit"; //2337
+	mes "20x Level 5 Soul Strike Scrolls"; //695
+	mes "and 300x Shadow Orbs"; //7524
+	
+	menu "I got the items! Believe it!",M_Ninja,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Pirate:
 	next;
@@ -708,11 +714,16 @@ H_Rainbow:
 H_Crimson:
 	next;
 	mes "[Fashionista]";
-	mes "Heh, have fun making this one..."
-	mes "You're going to need...";
+	mes "Aren't you a greedy one?";
+	mes "You're going to need all this stuff, buddy.";
 
-	mes "List"
-	menu "Here ya go.",M_Crimson,"Return to Menu",H_CHOICE, "Yeah, no.",N_CLOSE;
+	mes "1x Black Rose"; //13155
+	mes "1x Rosevine"; //1985
+	mes "10x Frozen Roses"; //749
+	mes "100x Witherless Roses"; //748
+	mes "and 200x Crystal Mirrors"; //747
+	
+	menu "Cha ching, I got it!",M_Crimson,"Return to Menu",H_CHOICE, "Yeah, no.",N_CLOSE;
 
 H_Umbala:
 	next;
@@ -751,8 +762,8 @@ G_Backpack:
 	mes "1x Diabolus Manteau"; //2537
 	mes "1x Well-Chewed Pencil"; //5574
 	mes "1x Model Training Hat"; //5073
-	mes "20x Gold"; //969
-	mes "10x Emperium"; //714
+	mes "7x Gold"; //969
+	mes "5x Emperium"; //714
 	mes "5x Three-Headed Dragon's Head"; //7443
 	mes "1x Solidified Magic"; //6608
 	mes "1x Sura's Rampage[1]"; //1830
@@ -943,16 +954,17 @@ M_CatEar:
         close;
 
 M_Chibi:
-		if(countitem(5123)<1 || countitem(5182)<1 || countitem(6020)<100)
+		if(countitem(7567)<200 || countitem(2366)<1 || countitem(2422)<1 || countitem(5211)<1)
 			goto M_insufficient;
-        delitem 5123,1;
-        delitem 5182,1;
-        delitem 6020,100;
+        delitem 7567,200;
+        delitem 2366,1;
+        delitem 2422,1;
+		delitem 5211,1
 		
 		mes "[Fashionista]";
-		mes "Thanks, here ya go.";
+		mes "Double the cuteness!";
 	
-        getitem 18756,1;
+        getitem 18673,1;
         close;
 		
 M_Crown:
@@ -1113,7 +1125,20 @@ M_Clover:
 
 
 M_Ninja:
-
+	if(countitem(618)<20 || countitem(609)<20 || countitem(2337)<1 || countitem(695)<20 || countitem(7524)<300)
+        goto M_insufficient;
+    
+	delitem 618,20;
+    delitem 609,20;
+    delitem 2337,1;
+	delitem 695,20;
+	delitem 7524,300;
+	
+	mes "[Fashionista]";
+	mes "I hope you can read it...";
+	
+	getitem 5362,1;
+    close;
 
 M_Pirate:
 
@@ -1138,7 +1163,20 @@ M_Rainbow:
 
 
 M_Crimson:
-
+	if(countitem(13155)<1 || countitem(749)<10 || countitem(748)<100 || countitem(747)<200)
+        goto M_insufficient;
+    
+	delitem 13155,1;
+    delitem 749,10;
+    delitem 748,100;
+	delitem 747,200;
+		
+	mes "[Fashionista]";
+	mes "Don't go throwing that at people now~";
+	
+	getitem 5548,1;
+    close;
+	
 
 M_Umbala:
 
@@ -1152,7 +1190,7 @@ M_Fallen:
 
 
 M_Backpack:
-	if(countitem(2554)<1 || countitem(5574)<1 || countitem(5073)<1 || countitem(969)<20 || countitem(714)<10 
+	if(countitem(2554)<1 || countitem(5574)<1 || countitem(5073)<1 || countitem(969)<7 || countitem(714)<5 
 	|| countitem(7443)<5 || countitem(6608)<1 || countitem(1830)<1 || countitem(10013)<1|| countitem(2524)<1 
 	|| countitem(2537)<1 || Zeny < 10000000)
         goto M_insufficient;
@@ -1160,8 +1198,8 @@ M_Backpack:
 		delitem 2554,1;
         delitem 5574,1;
         delitem 5073,1;
-		delitem 969,20;
-		delitem 714,10;
+		delitem 969,7;
+		delitem 714,5;
 		delitem 7443,5;
 		delitem 6608,1;
 		delitem 1830,1;
