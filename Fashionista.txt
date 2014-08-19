@@ -698,7 +698,11 @@ H_Rainbow:
 	mes "My greatest creation..."
 	mes "You're going to need...";
 
-	mes "List"
+	mes "500x Rainbow Shells";
+	mes "1x Gangster Scarf";
+	mes "1x Counteragent";
+	mes "and 1x Mixture";
+	
 	menu "Here ya go.",M_Rainbow,"Return to Menu",H_CHOICE, "It's too fruity, nope.",N_CLOSE;
 
 H_Crimson:
@@ -743,6 +747,8 @@ G_Backpack:
 	mes "Oh man, you're going to have fun with this one...";
 
 	mes "1x Nidhoggur's Shadow Garb"; //2554
+	mes "1x Valkyrian Manteau"; //2524
+	mes "1x Diabolus Manteau"; //2537
 	mes "1x Well-Chewed Pencil"; //5574
 	mes "1x Model Training Hat"; //5073
 	mes "20x Gold"; //969
@@ -750,6 +756,7 @@ G_Backpack:
 	mes "5x Three-Headed Dragon's Head"; //7443
 	mes "1x Solidified Magic"; //6608
 	mes "1x Sura's Rampage[1]"; //1830
+	mes "1x Backpack"; //10013
 	mes "and 10 Million Zeny";
 	menu "....I think I have all of it.",M_Backpack,"Return to Menu",H_CHOICE, "That's insane, I'm out.",N_CLOSE;
 
@@ -884,7 +891,7 @@ I_WINGOFDIABLO:
 //___________MAKE ITEM UPPER___________//       
 M_Abysmal:
         if(countitem(5120)<1 || countitem(1064)<100 || countitem(983)<10 || countitem(7023)<2)
-        goto M_insufficient;
+			goto M_insufficient;
         delitem 5120,1;
         delitem 1064,100;
         delitem 983,10;
@@ -898,7 +905,7 @@ M_Abysmal:
 
 M_Guardian:
 		if(countitem(5123)<1 || countitem(5182)<1 || countitem(6020)<100)
-        goto M_insufficient;
+			goto M_insufficient;
         delitem 5123,1;
         delitem 5182,1;
         delitem 6020,100;
@@ -911,7 +918,7 @@ M_Guardian:
 		
 M_Shiba:
         if(countitem(5123)<1 || countitem(5182)<1 || countitem(6020)<100)
-        goto M_insufficient;
+			goto M_insufficient;
         delitem 5123,1;
         delitem 5182,1;
         delitem 6020,100;
@@ -924,7 +931,7 @@ M_Shiba:
 
 M_CatEar:
         if(countitem(5123)<1 || countitem(5182)<1 || countitem(6020)<100)
-        goto M_insufficient;
+			goto M_insufficient;
         delitem 5123,1;
         delitem 5182,1;
         delitem 6020,100;
@@ -937,7 +944,7 @@ M_CatEar:
 
 M_Chibi:
 		if(countitem(5123)<1 || countitem(5182)<1 || countitem(6020)<100)
-        goto M_insufficient;
+			goto M_insufficient;
         delitem 5123,1;
         delitem 5182,1;
         delitem 6020,100;
@@ -1115,6 +1122,19 @@ M_PirateR:
 
 
 M_Rainbow:
+	if(countitem(1013)<500 || countitem(5361)<1 || countitem(973)<1 || countitem(974)<1)
+        goto M_insufficient;
+    
+	delitem 1013,500;
+    delitem 5361,1;
+    delitem 973,1;
+	delitem 974,1;
+		
+	mes "[Fashionista]";
+	mes "Enjoy being fashionable~";
+	
+	getitem 5463,1;
+    close;
 
 
 M_Crimson:
@@ -1133,7 +1153,8 @@ M_Fallen:
 
 M_Backpack:
 	if(countitem(2554)<1 || countitem(5574)<1 || countitem(5073)<1 || countitem(969)<20 || countitem(714)<10 
-	|| countitem(7443)<5 || countitem(6608)<1 || countitem(1830)<1 || Zeny < 10000000)
+	|| countitem(7443)<5 || countitem(6608)<1 || countitem(1830)<1 || countitem(10013)<1|| countitem(2524)<1 
+	|| countitem(2537)<1 || Zeny < 10000000)
         goto M_insufficient;
         
 		delitem 2554,1;
@@ -1144,6 +1165,9 @@ M_Backpack:
 		delitem 7443,5;
 		delitem 6608,1;
 		delitem 1830,1;
+		delitem 10013,1;
+		delitem 2524,1;
+		delitem 2537,1;
 		set Zeny,zeny-10000000;
 		
 		mes "[Fashionista]";
