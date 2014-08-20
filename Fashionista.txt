@@ -254,19 +254,19 @@ H_Chibi:
 	mes "and 1x Dress Hat"; //5211
 	menu "...She's so cute...I want it!",M_Chibi,"Return to Menu",H_CHOICE, "Not worth the jailtime.",N_CLOSE;
 
-H_Crown:
+H_Crown: //5564
 	next;
 	mes "[Fashionista]";
 	mes "You're going to need...";
 
-	mes "1x Crown,";
-	mes "1x Tiara,";
-	mes "1x Jewel Crown,";
-	mes "2x Gold,";
-	mes "1x Scarlet Dyestuff,";
-	mes "20 Level 3 Fire Bolt Scrolls,";
-	mes "20 Level 3 Cold Bolt Scrolls,";
-	mes "and 20 Level 3 Lightening Bolt Scrolls.";
+	mes "1x Crown,"; //2235
+	mes "1x Tiara,"; //2234
+	mes "1x Jewel Crown,"; //5002
+	mes "2x Gold,"; //969
+	mes "1x Scarlet Dyestuff,"; //975
+	mes "20 Level 3 Fire Bolt Scrolls,"; //690
+	mes "20 Level 3 Cold Bolt Scrolls,"; //688
+	mes "and 20 Level 3 Lightening Bolt Scrolls."; //692
 	
 	menu "Here ya go.",M_Crown,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
@@ -1001,6 +1001,24 @@ M_Chibi:
         close;
 		
 M_Crown:
+		if(countitem(2235)<1 || countitem(2234)<1 || countitem(5002)<1 || countitem(969)<2 || countitem(975)<1 || countitem(690)<20 
+		|| countitem(688)<20 || countitem(692)<20)
+			goto M_insufficient;
+        
+		delitem 2235,1;
+        delitem 2334,1;
+        delitem 5002,1;
+		delitem 969,2;
+		delitem 975,1;
+		delitem 690,20;
+		delitem 688,20;
+		delitem 692,20;
+		
+		mes "[Fashionista]";
+		mes "PHENOMINAL COSMIC POWER!";
+	
+        getitem 5564,1;
+        close;
 
 
 M_DressHat:
