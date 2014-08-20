@@ -40,6 +40,7 @@ H_UPPER:
 	menu 
 		"Abysmal Knight Helm",H_Abysmal, //5363
 		"Benevolent Guardian",H_Guardian, //18542
+		"Black Feather Beret",H_BlackBeret, //1861
 		"Black Shiba Inu Hat",H_Shiba, //18756
 		"Cat Ear Beret",H_CatEar, //18600
 		"Chibi Pope",H_Chibi, //18673
@@ -146,7 +147,7 @@ A_ACC:
 		"Lucky Clip", A_Lucky, //2742
 		"RWC 2012 Ring",A_RWCRing, //2966
 		"RWC 2012 Pendant",A_RWCPendant, //2968
-		"Sound Amplifier",A_Sound, //2899
+		//"Sound Amplifier",A_Sound, //2899
 		"Cancel",N_CLOSE;
 
 //___________SOCKET LIST___________//
@@ -210,6 +211,17 @@ H_Guardian:
 	mes "1x Puppy Hat";
 	mes "100x Fur";
 	menu "Here ya go.",M_Guardian,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_BlackBeret: //18561
+	next;
+	mes "[Fashionista]";
+	mes "You're going to need...";
+	
+	mes "1x Black Dyestuffs"; //983
+	mes "1x Feather Beret"; //5170
+	mes "10 Berets"; //5172
+	mes "and 5,000,000 Zeny";
+	menu "Here ya go.",M_BlackBeret,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 	
 H_Shiba:
 	next;
@@ -252,20 +264,23 @@ H_Crown:
 	mes "1x Jewel Crown,";
 	mes "2x Gold,";
 	mes "1x Scarlet Dyestuff,";
-	mes "100 Level 3 Fire Bolt Scrolls,";
-	mes "100 Level 3 Cold Bolt Scrolls,";
-	mes "and 100 Level 3 Lightening Bolt Scrolls.";
+	mes "20 Level 3 Fire Bolt Scrolls,";
+	mes "20 Level 3 Cold Bolt Scrolls,";
+	mes "and 20 Level 3 Lightening Bolt Scrolls.";
 	
 	menu "Here ya go.",M_Crown,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
-H_DressHat:
+H_DressHat: //5211
 	next;
 	mes "[Fashionista]";
 	mes "You're going to need...";
 	
-	mes "1x Ulle's Cap[1]";
-	mes "1x Puppy Hat";
-	mes "100x Fur";
+	mes "100x Fabric";
+	mes "1x Big Ribbon"; //2244
+	mes "1x Cute Ribbon"; //2250
+	mes "1x Ribbon"; //2209
+	mes "1x Silk Ribbon"; //10007
+	mes "and 1x Small Ribbons"; //5085
 	menu "Here ya go.",M_DressHat,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Alicel:	
@@ -313,12 +328,16 @@ H_Holy:
 	mes "List"
 	menu "Here ya go.",M_Holy,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;	
 	
-H_Jeje:
+H_Jeje: //18885
 	next;
 	mes "[Fashionista]";
 	mes "You're going to need...";
 
-	mes "List"
+	mes "200x Jejellopies"; //6498
+	mes "50x Inside-out Shirts"; //12700
+	mes "1x Cooling Device"; //2804
+	mes "500x Mastela Fruits"; //522
+	mes "and 1 Million Zeny."; 
 	menu "Here ya go.",M_Jeje,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Kettle:
@@ -814,14 +833,14 @@ A_RWCPendant:
 	mes "List"
 	menu "Here ya go.",M_RWCPendant,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
-A_Sound:
-	next;
-	mes "[Fashionista]";
-	mes "...I really don't want to make this. It's really annoying.";
-	mes "...but here's the list.
+//A_Sound:
+	//next;
+	//mes "[Fashionista]";
+	//mes "...I really don't want to make this. It's really annoying.";
+	//mes "...but here's the list.";
 
-	mes "List"
-	menu "Here ya go.",M_Sound,"Return to Menu",H_CHOICE, "Nopeeeeeeee. Later.",N_CLOSE;
+	//mes "List"
+	//menu "Here ya go.",M_Sound,"Return to Menu",H_CHOICE, "Nopeeeeeeee. Later.",N_CLOSE;
 
 
 //___________ITEM REQUIREMENTS SOCKET___________//
@@ -926,6 +945,20 @@ M_Guardian:
 	
         getitem 18756,1;
         close;
+
+M_BlackBeret:
+		if(countitem(983)<1 || countitem(5170)<1 || countitem(5172)<10 || zeny < 5000000)
+			goto M_insufficient;
+        delitem 983,1;
+        delitem 5170,1;
+		delitem 5172,10;
+        set Zeny,zeny-5000000;
+		
+		mes "[Fashionista]";
+		mes "Thanks, here ya go.";
+	
+        getitem 18561,1;
+        close;
 		
 M_Shiba:
         if(countitem(5123)<1 || countitem(5182)<1 || countitem(6020)<100)
@@ -959,7 +992,7 @@ M_Chibi:
         delitem 7567,200;
         delitem 2366,1;
         delitem 2422,1;
-		delitem 5211,1
+		delitem 5211,1;
 		
 		mes "[Fashionista]";
 		mes "Double the cuteness!";
@@ -971,6 +1004,20 @@ M_Crown:
 
 
 M_DressHat:
+	if(countitem(1059)<100 || countitem(2244)<1 || countitem(2250)<1 || countitem(2209)<1 || countitem(10007)<1 || countitem(5085)<1)
+			goto M_insufficient;
+        delitem 1059,100;
+        delitem 2244,1;
+        delitem 2250,1;
+		delitem 2209,1;
+		delitem 10007,1;
+		delitem 5085,1;
+		
+		mes "[Fashionista]";
+		mes "Son, you look kawaii as hell.";
+	
+        getitem 5211,1;
+        close;	
 	
 	
 M_Alicel:	
@@ -989,6 +1036,21 @@ M_Holy:
 
 
 M_Jeje:
+		if(countitem(6498)<200 || countitem(12700)<50 || countitem(2804)<1 || countitem(522)<1 || zeny < 1000000)
+			goto M_insufficient;
+        delitem 6498,200;
+        delitem 12700,1;
+        delitem 2804,1;
+		delitem 522,1
+		set Zeny,zeny-10000000;
+		
+		mes "[Fashionista]";
+		mes "Swag overload.";
+	
+        getitem 18885,1;
+        close;
+		
+
 
 	
 M_Kettle:
@@ -1230,7 +1292,7 @@ M_RWCRING:
 M_RWCPendant:
 
 
-M_Sound:
+//M_Sound:
 
 //___________MAKE ITEM SOCKET___________//   
 
