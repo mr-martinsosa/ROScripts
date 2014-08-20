@@ -65,7 +65,6 @@ H_UPPER:
 		//"Purple Cowboy Hat",H_PCowboy, //5409
 		"Ramen Hat",H_Ramen, //5293
 		"Red Beret",H_RedBeret, //5580
-		"Red Glasses",H_RedGlasses, //5288
 		"Red Pom Band",H_RedPom, //18601
 		"Satellite Hairband",H_Satellite, //5212
 		"Side Cap",H_SideCap, //5535
@@ -435,14 +434,6 @@ H_RedBeret:
 
 	mes "List"
 	menu "Here ya go.",M_RedBeret,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
-
-H_RedGlasses:
-	next;
-	mes "[Fashionista]";
-	mes "You're going to need...";
-
-	mes "List"
-	menu "Here ya go.",M_RedGlasses,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_RedPom:
 	next;
@@ -1103,9 +1094,6 @@ M_Ramen:
 
 
 M_RedBeret:
-
-
-M_RedGlasses:
 
 
 M_RedPom:
