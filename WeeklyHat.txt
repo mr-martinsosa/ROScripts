@@ -62,16 +62,16 @@ H_HATOFWEEK:
 		//"Yggdrasil Crown",H_Yggdrasil, //18580
 
 H_Abysmal:
-		next;
-		mes "[Ausum]";
-		mes "You're going to need...";
-	
-		mes "1x Bucket Hat [1]";
-		mes "300x Reins";
-		mes "30x Crystals of Darkness";
-		mes "10x Black Dyestuff";
-		mes "2x Blade Lost in Darkness";
-		menu "Here ya go.",M_Abysmal,"Nah, forget it.",N_CLOSE;
+	next;
+	mes "[Ausum]";
+	mes "You're going to need...";
+
+	mes "1x Bucket Hat [1]";
+	mes "300x Reins";
+	mes "30x Crystals of Darkness";
+	mes "10x Black Dyestuff";
+	mes "2x Blade Lost in Darkness";
+	menu "Here ya go.",M_Abysmal,"Nah, forget it.",N_CLOSE;
 
 M_Abysmal:
         if(countitem(5120)<1 || countitem(1064)<100 || countitem(7799)<30 || countitem(983)<10 || countitem(7023)<2)
@@ -94,12 +94,12 @@ M_insufficient:
         mes "[Ausum]";
         mes "You don't have the required materials.";
         mes "I can't exactly make this with no materials.";
-		emotion e_dots;
+	emotion e_dots;
         close;
 
 N_CLOSE:
-		mes "[Ausum]";
-		mes "Alright, I guess I'll starve in this cold, hard world, without any materials.";
-		emotion e_sob;
-		close;
+	mes "[Ausum]";
+	mes "Alright, I guess I'll starve in this cold, hard world, without any materials.";
+	emotion e_sob;
+	close;
 	
