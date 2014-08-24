@@ -110,7 +110,7 @@ H_LOW:
 	mes "[Fashionista]";
 	mes "Choose the headgear you would like to make.";
 	menu
-		"CD In Mouth",H_CD, //18666
+		//"CD In Mouth",H_CD, //18666
 		"Donut in Mouth",H_Donut, //5594
 		"Evolved Pipe",H_ePipe, //5220
 		"Four Leaf Clover",H_Clover, //5596
@@ -121,7 +121,7 @@ H_LOW:
 		"Pirate Dagger R",H_PirateR, //5532
 		"THE AMAZING RAINBOW SCARF",H_Rainbow, //5463
 		"Rose Of Crimson",H_Crimson, //5548
-		"Umbala Spirit",H_Umbala, //18505
+		//"Umbala Spirit",H_Umbala, //18505
 		"Well-Chewed Pencil",H_Pencil, //5574		
 		"Cancel",N_CLOSE;
 
@@ -647,13 +647,14 @@ H_Stunner:
 
 //___________ITEM REQUIREMENTS LOWER___________//
 
-H_CD:
-	next;
-	mes "[Fashionista]";
-	mes "You're going to need...";
+//H_CD:
+	//next;
+	//mes "[Fashionista]";
+	//mes "You're going to need...";
 
-	mes "List"
-	menu "Here ya go.",M_CD,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	//mes "1x Donut in Mouth";
+	//mes "Something else";
+	//menu "Here ya go.",M_CD,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Donut:
 	next;
@@ -735,13 +736,13 @@ H_Crimson:
 	
 	menu "Cha ching, I got it!",M_Crimson,"Return to Menu",H_CHOICE, "Yeah, no.",N_CLOSE;
 
-H_Umbala:
-	next;
-	mes "[Fashionista]";
-	mes "You're going to need...";
+//H_Umbala:
+	//next;
+	//mes "[Fashionista]";
+	//mes "You're going to need...";
 
-	mes "List"
-	menu "Here ya go.",M_Umbala,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	//mes "List"
+	//menu "Here ya go.",M_Umbala,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Pencil:
 	next;
@@ -1180,7 +1181,7 @@ M_Stunner:
 
 //___________MAKE ITEM LOWER___________//   
 
-M_CD:
+//M_CD:
 
 
 M_Donut:
@@ -1246,7 +1247,7 @@ M_Crimson:
     close;
 	
 
-M_Umbala:
+//M_Umbala:
 
 
 M_Pencil:

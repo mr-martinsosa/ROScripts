@@ -1,0 +1,105 @@
+//===== Reddit RO Script =====================================
+//= Weekly Hat Quest NPC
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.0, Fires out weekly quests.
+//===== Description: =========================================
+//= An NPC with a repeatable quest to do weekly.
+//===== Additional Comments: =================================
+//= 1.0, Made the script.
+
+moc_para01,187,31,5	script	Tailor Ausum	625,{
+
+	mes "[Ausum]";  
+	mes "Hey there! Every week I run out of supplies making new hats!";
+	mes "Care to help me gather some? I'll promise to make you a new hat every week!";
+    
+	menu "Sure, what's this week's hat?",H_HATOFWEEK, "Mad work, later.",N_CLOSE;
+	
+H_HATOFWEEK:
+	mes "[Ausum]";  
+	mes "This weeks hat is!";
+	mes "The "Abysmal Knight Helm"!; goto H_Abysmal; //5363
+		//"Benevolent Guardian",H_Guardian, //18542
+		//"Black Feather Beret",H_BlackBeret, //1861
+		//"Black Shiba Inu Hat",H_Shiba, //18756
+		//"Cat Ear Beret",H_CatEar, //18600
+		//"Chibi Pope",H_Chibi, //18673
+		//"Crown of Deceit",H_Crown,	//5564
+		//"Dress Hat",H_DressHat, //5211
+		//"Drooping Alicel",H_Alicel,	//18630
+		//"Evil Marching Hat",H_EvilMarch //18522
+		//"Flapping Angel Wing",H_fAngel,	//5269
+		//"Flapping Angeling",H_fAngeling, //5334
+		//"Holy Marching Hat",H_Holy, //5654
+		//"Jejecap",H_Jeje,	//18885
+		//"Kettle Hat",H_Kettle,	//5291
+		//"King Poring Hat",H_KingPoring //18785
+		//"Koneko Hat",H_Koneko,	//5372
+		//"Linguistic Book Hat",H_Linguistic, //5422
+		//"Little Feather Hat",H_LittleFeather, //18541
+		//"Lord of the Dead Helm",H_LordOfDead, //18574
+		//"Mercury Riser",H_Mercury, //18597
+		//"Magic Eyes",H_MagicEyes, //5138
+		//"Necromancer's Hood",H_Necro, //5502
+		//"Pecopeco Hairband",H_Peco, //5286
+		//"Purple Cowboy Hat",H_PCowboy, //5409
+		//"Ramen Hat",H_Ramen, //5293
+		//"Red Beret",H_RedBeret, //5580
+		//"Red Pom Band",H_RedPom, //18601
+		//"Satellite Hairband",H_Satellite, //5212
+		//"Side Cap",H_SideCap, //5535
+		//"Skull Cap",H_Skull, //18539
+		//"St Patrick's Hat",H_Patrick, //18565
+		//"Sunglasses Baseball Cap",H_Baseball, //18663
+		//"Tam",H_Tam, //5379
+		//"Turkey On Your Head",H_Turkey, //5778
+		//"Vacation Hat",H_Vacation, //5456
+		//"Valkyrie Feather Band",H_Valkyrie, //5256
+		//"Vanargrand Helm", H_Vanar, //18652
+		//"Witch's Pumpkin Hat",H_Witch, //18656
+		//"Yggdrasil Crown",H_Yggdrasil, //18580
+
+H_Abysmal:
+		next;
+		mes "[Ausum]";
+		mes "You're going to need...";
+	
+		mes "1x Bucket Hat [1]";
+		mes "300x Reins";
+		mes "30x Crystals of Darkness";
+		mes "10x Black Dyestuff";
+		mes "2x Blade Lost in Darkness";
+		menu "Here ya go.",M_Abysmal,"Nah, forget it.",N_CLOSE;
+
+M_Abysmal:
+        if(countitem(5120)<1 || countitem(1064)<100 || countitem(7799)<30 || countitem(983)<10 || countitem(7023)<2)
+			goto M_insufficient;
+        delitem 5120,1;
+        delitem 1064,100;
+		delitem 7799,30;
+        delitem 983,10;
+		delitem 7023,2;
+		
+		next;
+		mes "[Ausum]";
+		mes "Thanks! Come back with more materials if you want another!";
+	
+        getitem 5363,1;
+        close;
+		
+M_insufficient:
+        next;
+        mes "[Ausum]";
+        mes "You don't have the required materials.";
+        mes "I can't exactly make this with no materials.";
+		emotion e_dots;
+        close;
+
+N_CLOSE:
+		mes "[Ausum]";
+		mes "Alright, I guess I'll starve in this cold, hard world, without any materials.";
+		emotion e_sob;
+		close;
+	
