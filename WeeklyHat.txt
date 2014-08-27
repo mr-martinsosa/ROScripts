@@ -43,7 +43,6 @@ H_HATOFWEEK:
 		//"Mercury Riser",H_Mercury, //18597
 		//"Magic Eyes",H_MagicEyes, //5138
 		//"Necromancer's Hood",H_Necro, //5502
-		//"Pecopeco Hairband",H_Peco, //5286
 		//"Purple Cowboy Hat",H_PCowboy, //5409
 		//"Ramen Hat",H_Ramen, //5293
 		//"Red Beret",H_RedBeret, //5580

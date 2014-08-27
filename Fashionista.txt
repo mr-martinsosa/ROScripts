@@ -61,7 +61,6 @@ H_UPPER:
 		"Mercury Riser",H_Mercury, //18597
 		"Magic Eyes",H_MagicEyes, //5138
 		"Necromancer's Hood",H_Necro, //5502
-		"Pecopeco Hairband",H_Peco, //5286
 		//"Purple Cowboy Hat",H_PCowboy, //5409
 		"Ramen Hat",H_Ramen, //5293
 		"Red Beret",H_RedBeret, //5580
@@ -411,13 +410,6 @@ H_Necro:
 	mes "List"
 	menu "Here ya go.",M_Necro,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
-H_Peco:
-	next;
-	mes "[Fashionista]";
-	mes "You're going to need...";
-
-	mes "List"
-	menu "Here ya go.",M_Peco,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 H_Ramen:
 	next;
@@ -1087,8 +1079,6 @@ M_MagicEyes:
 
 M_Necro:
 
-
-M_Peco:
 
 
 M_Ramen:
