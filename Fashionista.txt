@@ -707,7 +707,7 @@ H_Rainbow:
 	mes "My greatest creation..."
 	mes "You're going to need...";
 
-	mes "500x Rainbow Shells";
+	mes "300x Rainbow Shells";
 	mes "1x Gangster Scarf";
 	mes "1x Counteragent";
 	mes "and 1x Mixture";
@@ -874,7 +874,10 @@ I_BLINDER:
 	mes "[Fashionista]";
 	mes "You're going to need...";
 
-	mes "List"
+	mes "1x Dark Blinder";
+	mes "1x Sunglasses [1]";
+	mes "300x Dark Crystal Fragments";
+	mes "and 2 Million Zeny.";
 	menu "Here ya go.",M_BLINDER,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 I_ELVEN:
@@ -1206,10 +1209,10 @@ M_PirateR:
 
 
 M_Rainbow:
-	if(countitem(1013)<500 || countitem(5361)<1 || countitem(973)<1 || countitem(974)<1)
+	if(countitem(1013)<300 || countitem(5361)<1 || countitem(973)<1 || countitem(974)<1)
         goto M_insufficient;
     
-	delitem 1013,500;
+	delitem 1013,300;
     delitem 5361,1;
     delitem 973,1;
 	delitem 974,1;
