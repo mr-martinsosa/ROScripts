@@ -1,0 +1,286 @@
+//===== Reddit RO Script =====================================
+//= Socket Master NPC
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.0 NPC dispenses hats.
+//===== Description: =========================================
+//= An NPC with a plethora of socketing techniques.
+//===== Additional Comments: =================================
+
+I_SOCKET:
+	mes "[Socket Master]";
+	mes "Choose the item you would like to socket.";
+	mes "Be warned, all refinements will be lost.";
+	menu
+		"Angel Wing Ears",I_ANGELEAR, //18518
+		//"Black Devil's Mask",I_BLACKDEVIL2, //18603
+		"Blush",I_BLUSH,//18607
+		//"Chambered RWC 2012 Ring",I_CHAMBEREDRING, //2967
+		//"Chambered RWC 2012 Pendant",I_CHAMBEREDPENDANT, //2969
+		"Dark Blinder",I_BLINDER, //18609
+		"Elven Ears",I_ELVEN, //18507
+		//"Vacation Hat",I_VACATION, //5287
+		"Wing of Diablo (Evil Wing Ears)",I_WINGOFDIABLO, //18519
+		"How about giving my Feather Beret a little edge?",H_BlackBeret,
+		"Cancel",N_CLOSE;
+	
+	
+//___________ITEM REQUIREMENTS SOCKET___________//
+
+I_ANGELEAR:
+	next;
+	mes "[Socket Master]";
+	mes "You're going to need...";
+	
+	mes "1x Angel Wing Ears"; //5074
+	mes "1x Halo"; //2282
+	mes "1x Angel Wing"; //2254
+	mes "2x White Dyestuffs"; //982
+	mes "2 Million Zeny";
+	mes "And I should mention that there's a 50% success rate.";
+	emotion e_heh;
+	menu "Here goes nothing!",M_ANGELEAR,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+//I_BLACKDEVIL2:
+	//next;
+	//mes "[Socket Master]";
+	//mes "You're going to need...";
+
+	//mes "List"
+	//menu "Here goes nothing!",M_BLACKDEVIL,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+H_BlackBeret: //18561
+	next;
+	mes "[Socket Master]";
+	mes "You're going to need...";
+	
+	mes "4x Black Dyestuffs"; //983
+	mes "1x Feather Beret"; //5170
+	mes "10x Berets"; //5172
+	mes "and 4 Million Zeny";
+	mes "Let's not forget the 30% success chance.";
+	emotion e_heh;
+	menu "YOLO BLACK HATS!",M_BlackBeret,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_BLUSH:
+	next;
+	mes "[Socket Master]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here goes nothing!",M_BLUSH,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	
+//I_CHAMBEREDRING:
+	//next;
+	//mes "[Socket Master]";
+	//mes "You're going to need...";
+
+	//mes "List"
+	//menu "Here goes nothing!",M_CHAMBEREDRING,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+//I_CHAMBEREDPENDANT:
+	//next;
+	//mes "[Socket Master]";
+	//mes "You're going to need...";
+
+	//mes "List"
+	//menu "Here goes nothing!",M_CHAMBEREDPENDANT,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_BLINDER:
+	next;
+	mes "[Socket Master]";
+	mes "You're going to need...";
+
+	mes "1x Dark Blinder"; //5104
+	mes "100x Dark Crystal Fragments"; //7315
+	mes "and 2 Million Zeny.";
+	mes "And I should mention that there's a 50% success rate.";
+	emotion e_heh;
+	menu "Here goes nothing!",M_BLINDER,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_ELVEN:
+	next;
+	mes "[Socket Master]";
+	mes "You're going to need...";
+
+	mes "List"
+	menu "Here goes nothing!",M_ELVEN,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+//I_VACATION:
+	//next;
+	//mes "[Socket Master]";
+	//mes "You're going to need...";
+
+	//mes "List"
+	//menu "Here goes nothing!",M_VACATION,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+
+I_WINGOFDIABLO:
+	next;
+	mes "[Socket Master]";
+	mes "You're going to need...";
+
+	mes "1x Evil Wing Ears"; //5068
+	mes "1x Blade Lost In Darkness"; //7023
+	mes "1x Evil Wing"; //2255
+	mes "4x Black Dyestuffs"; //983
+	mes "2 Million Zeny";
+	mes "And I should mention that there's a 50% success rate.";
+	emotion e_heh;
+	menu "Here goes nothing!",M_WINGOFDIABLO,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
+	
+
+	
+//___________MAKE ITEM SOCKET___________//   
+
+M_ANGELEAR:
+
+mes "1x Angel Wing Ears"; //5074
+	mes "1x Halo"; //2282
+	mes "1x Angel Wing"; //2254
+	mes "2x White Dyestuffs"; //982
+	mes "2 Million Zeny";
+	mes "And I should mention that there's a 50% success rate.";
+	
+	
+	if(countitem(5074)<1 || countitem(2282)<1 || countitem(2254)<1 || countitem(982)<2 || zeny < 2000000)
+			goto M_insufficient;
+        delitem 5074,1;
+        delitem 2282,1;
+		delitem 2254,1;
+		delitem 982,2;
+        set Zeny,zeny-2000000;
+		
+		if (rand(100) <30){
+			mes "[Socket Master]";
+			mes "Lookie that. It worked. Congrats.";
+			getitem 18518,1;
+			close;
+		}
+		
+		else goto S_FAIL;
+
+
+//M_BLACKDEVIL2:
+
+
+M_BLUSH:
+	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+			goto M_insufficient;
+        delitem 983,4;
+        delitem 5170,1;
+		delitem 5172,10;
+        set Zeny,zeny-4000000;
+		
+		if (rand(100) <30){
+			mes "[Socket Master]";
+			mes "Lookie that. It worked. Congrats.";
+			getitem 18561,1;
+			close;
+		}
+		
+		else goto S_FAIL;
+
+
+M_BlackBeret:
+		if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+			goto M_insufficient;
+        delitem 983,4;
+        delitem 5170,1;
+		delitem 5172,10;
+        set Zeny,zeny-4000000;
+		
+		if (rand(100) <30){
+			mes "[Socket Master]";
+			mes "Lookie that. It worked. Congrats.";
+			getitem 18561,1;
+			close;
+		}
+		
+		else goto S_FAIL;
+
+//M_CHAMBEREDRING:
+
+
+//M_CHAMBEREDPENDANT:
+
+
+M_BLINDER:
+	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+			goto M_insufficient;
+        delitem 983,4;
+        delitem 5170,1;
+		delitem 5172,10;
+        set Zeny,zeny-4000000;
+		
+		if (rand(100) <30){
+			mes "[Socket Master]";
+			mes "Lookie that. It worked. Congrats.";
+			getitem 18561,1;
+			close;
+		}
+		
+		else goto S_FAIL;
+
+M_ELVEN:
+	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+			goto M_insufficient;
+        delitem 983,4;
+        delitem 5170,1;
+		delitem 5172,10;
+        set Zeny,zeny-4000000;
+		
+		if (rand(100) <30){
+			mes "[Socket Master]";
+			mes "Lookie that. It worked. Congrats.";
+			getitem 18561,1;
+			close;
+		}
+		
+		else goto S_FAIL;
+
+
+//M_VACATION:
+
+
+M_WINGOFDIABLO:
+	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+			goto M_insufficient;
+        delitem 983,4;
+        delitem 5170,1;
+		delitem 5172,10;
+        set Zeny,zeny-4000000;
+		
+		if (rand(100) <30){
+			mes "[Socket Master]";
+			mes "Lookie that. It worked. Congrats.";
+			getitem 18561,1;
+			close;
+		}
+		
+		else goto S_FAIL;
+
+//___________INSUFFICIENT ITEMS___________//
+
+M_insufficient:
+        next;
+        mes "[Socket Master]";
+        mes "You don't have the required materials.";
+        mes "Get outta here, I don't work for free.";
+		emotion e_pif;
+        menu "Return to Main Menu",I_SOCKET,"Leave",N_CLOSE;
+		
+//___________FAILING___________//
+
+S_FAIL:
+	 next;
+        mes "[Socket Master]";
+        mes "Welp. That happened. Sorry man. Try again.";
+        menu "Return to Main Menu",I_SOCKET,"Leave",N_CLOSE;
+		
+//___________CLOSE NPC___________//
+
+N_CLOSE:
+	mes "[Socket Master]";
+	mes "Hey, those items won't slot themselves...";
+	close;

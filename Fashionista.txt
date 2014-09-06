@@ -40,7 +40,7 @@ H_UPPER:
 	menu 
 		"Abysmal Knight Helm",H_Abysmal, //5363
 		"Benevolent Guardian",H_Guardian, //18542
-		"Black Feather Beret",H_BlackBeret, //1861
+		"Black Feather Beret",H_BlackBeret, //18561
 		"Black Shiba Inu Hat",H_Shiba, //18756
 		"Cat Ear Beret",H_CatEar, //18600
 		"Chibi Pope",H_Chibi, //18673
@@ -217,7 +217,7 @@ H_BlackBeret: //18561
 	
 	mes "1x Black Dyestuffs"; //983
 	mes "1x Feather Beret"; //5170
-	mes "10 Berets"; //5172
+	mes "10x Berets"; //5172
 	mes "and 5,000,000 Zeny";
 	menu "Here ya go.",M_BlackBeret,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 	
