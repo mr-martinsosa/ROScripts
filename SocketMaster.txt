@@ -8,6 +8,10 @@
 //= An NPC with a plethora of socketing techniques.
 //===== Additional Comments: =================================
 
+
+prt_in,22,70,5	script	Melbayies	498,{
+
+
 I_SOCKET:
 	mes "[Socket Master]";
 	mes "Choose the item you would like to socket.";
@@ -58,7 +62,8 @@ H_BlackBeret: //18561
 	mes "4x Black Dyestuffs"; //983
 	mes "1x Feather Beret"; //5170
 	mes "10x Berets"; //5172
-	mes "and 4 Million Zeny";
+	mes "200x Soft Feathers"; //7063
+	mes "and 5 Million Zeny";
 	mes "Let's not forget the 30% success chance.";
 	emotion e_heh;
 	menu "YOLO BLACK HATS!",M_BlackBeret,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
@@ -66,9 +71,11 @@ H_BlackBeret: //18561
 I_BLUSH:
 	next;
 	mes "[Socket Master]";
-	mes "You're going to need...";
-
-	mes "List"
+	mes "100x Alice's Apron"; //7074
+	mes "1x Blush"; //5040
+	mes "and 1 Million Zeny.;
+	mes "And I should mention that there's a 50% success rate.";
+	emotion e_heh;
 	menu "Here goes nothing!",M_BLUSH,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 	
 //I_CHAMBEREDRING:
@@ -104,7 +111,11 @@ I_ELVEN:
 	mes "[Socket Master]";
 	mes "You're going to need...";
 
-	mes "List"
+	mes "1x Elven Ears"; //2286
+	mes "100x Elder Pixie's Moustache"; //1040
+	mes "and 1 Million Zeny.";
+	mes "And I should mention that there's a 50% success rate.";
+	emotion e_heh; 
 	menu "Here goes nothing!",M_ELVEN,"Return to Menu",H_CHOICE, "Nah, forget it.",N_CLOSE;
 
 //I_VACATION:
@@ -134,15 +145,6 @@ I_WINGOFDIABLO:
 //___________MAKE ITEM SOCKET___________//   
 
 M_ANGELEAR:
-
-mes "1x Angel Wing Ears"; //5074
-	mes "1x Halo"; //2282
-	mes "1x Angel Wing"; //2254
-	mes "2x White Dyestuffs"; //982
-	mes "2 Million Zeny";
-	mes "And I should mention that there's a 50% success rate.";
-	
-	
 	if(countitem(5074)<1 || countitem(2282)<1 || countitem(2254)<1 || countitem(982)<2 || zeny < 2000000)
 			goto M_insufficient;
         delitem 5074,1;
@@ -151,7 +153,7 @@ mes "1x Angel Wing Ears"; //5074
 		delitem 982,2;
         set Zeny,zeny-2000000;
 		
-		if (rand(100) <30){
+		if (rand(100) <50){
 			mes "[Socket Master]";
 			mes "Lookie that. It worked. Congrats.";
 			getitem 18518,1;
@@ -164,31 +166,14 @@ mes "1x Angel Wing Ears"; //5074
 //M_BLACKDEVIL2:
 
 
-M_BLUSH:
-	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
-			goto M_insufficient;
-        delitem 983,4;
-        delitem 5170,1;
-		delitem 5172,10;
-        set Zeny,zeny-4000000;
-		
-		if (rand(100) <30){
-			mes "[Socket Master]";
-			mes "Lookie that. It worked. Congrats.";
-			getitem 18561,1;
-			close;
-		}
-		
-		else goto S_FAIL;
-
-
 M_BlackBeret:
-		if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+		if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || countitem(7063)<200 || zeny < 5000000)
 			goto M_insufficient;
         delitem 983,4;
         delitem 5170,1;
 		delitem 5172,10;
-        set Zeny,zeny-4000000;
+		delitem 7063,200;
+        set Zeny,zeny-5000000;
 		
 		if (rand(100) <30){
 			mes "[Socket Master]";
@@ -198,6 +183,23 @@ M_BlackBeret:
 		}
 		
 		else goto S_FAIL;
+		
+M_BLUSH:
+	if(countitem(7074)<100 || countitem(5040)<1 || zeny < 1000000)
+			goto M_insufficient;
+        delitem 7074,100;
+        delitem 5040,1;
+        set Zeny,zeny-1000000;
+		
+		if (rand(100) <50){
+			mes "[Socket Master]";
+			mes "Lookie that. It worked. Congrats.";
+			getitem 18607,1;
+			close;
+		}
+		
+		else goto S_FAIL;
+
 
 //M_CHAMBEREDRING:
 
@@ -206,34 +208,32 @@ M_BlackBeret:
 
 
 M_BLINDER:
-	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+	if(countitem(5104)<1 || countitem(7315)<100 || zeny < 2000000)
 			goto M_insufficient;
-        delitem 983,4;
-        delitem 5170,1;
-		delitem 5172,10;
-        set Zeny,zeny-4000000;
+        delitem 5104,1;
+        delitem 7315,100;
+        set Zeny,zeny-2000000;
 		
-		if (rand(100) <30){
+		if (rand(100) <50){
 			mes "[Socket Master]";
 			mes "Lookie that. It worked. Congrats.";
-			getitem 18561,1;
+			getitem 18609,1;
 			close;
 		}
 		
 		else goto S_FAIL;
 
 M_ELVEN:
-	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+	if(countitem(2286)<1 || countitem(1040)<100 || zeny < 1000000)
 			goto M_insufficient;
-        delitem 983,4;
-        delitem 5170,1;
-		delitem 5172,10;
-        set Zeny,zeny-4000000;
+        delitem 2286,1;
+        delitem 1040,100;
+        set Zeny,zeny-1000000;
 		
-		if (rand(100) <30){
+		if (rand(100) <50){
 			mes "[Socket Master]";
 			mes "Lookie that. It worked. Congrats.";
-			getitem 18561,1;
+			getitem 18507,1;
 			close;
 		}
 		
@@ -244,17 +244,18 @@ M_ELVEN:
 
 
 M_WINGOFDIABLO:
-	if(countitem(983)<4 || countitem(5170)<1 || countitem(5172)<10 || zeny < 4000000)
+	if(countitem(5068)<1 || countitem(7023)<1 || countitem(2255)<1 || countitem(983)<4 || zeny < 2000000)
 			goto M_insufficient;
-        delitem 983,4;
-        delitem 5170,1;
-		delitem 5172,10;
+        delitem 5068,1;
+		delitem 7023,1;
+		delitem 2255,1;
+		delitem 983,4;
         set Zeny,zeny-4000000;
 		
-		if (rand(100) <30){
+		if (rand(100) <50){
 			mes "[Socket Master]";
 			mes "Lookie that. It worked. Congrats.";
-			getitem 18561,1;
+			getitem 18519,1;
 			close;
 		}
 		
@@ -274,6 +275,7 @@ M_insufficient:
 
 S_FAIL:
 	 next;
+		specialeffect EF_SUI_EXPLOSION;
         mes "[Socket Master]";
         mes "Welp. That happened. Sorry man. Try again.";
         menu "Return to Main Menu",I_SOCKET,"Leave",N_CLOSE;

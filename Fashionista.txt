@@ -39,6 +39,7 @@ H_UPPER:
 	mes "Choose the headgear you would like to make.";
 	menu 
 		"Abysmal Knight Helm",H_Abysmal, //5363
+		"Anubis Helm", H_Anubis, //5490
 		"Benevolent Guardian",H_Guardian, //18542
 		"Black Feather Beret",H_BlackBeret, //18561
 		"Black Shiba Inu Hat",H_Shiba, //18756
@@ -69,6 +70,7 @@ H_UPPER:
 		"Side Cap",H_SideCap, //5535
 		"Skull Cap",H_Skull, //18539
 		"St Patrick's Hat",H_Patrick, //18565
+		"Strawberry Hat", H_Strawberry, //18589
 		"Sunglasses Baseball Cap",H_Baseball, //18663
 		"Tam",H_Tam, //5379
 		"Turkey On Your Head",H_Turkey, //5778
