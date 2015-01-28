@@ -17,7 +17,7 @@ lighthalzen,96,167,5	script	Dog	81,{
 	menu "...Are you talking?",-;
 	
 	mes "[Dog]";
-	mes "Yeah I am. Can you do me a favor?";
+	mes "Yeah, I am. Can you do me a favor?";
 	next;
 	menu "For a talking dog? Yes!",M_YES,"You scare me. Nope. See ya.",M_NO;
 	next;
