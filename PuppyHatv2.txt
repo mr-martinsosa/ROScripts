@@ -1,0 +1,75 @@
+//===== RO Script =====================================
+//= Puppy Hat Quest
+//===== By: ==================================================
+//= Martin
+//===== Current Version: =====================================
+//= 1.1
+//===== Description: =========================================
+//= A quest to get the headgear item Puppy Hat (5182)
+//===== Additional Comments: =================================
+//= 1.0 First release
+//= 1.1 Text update
+	
+lighthalzen,96,167,5	script	Dog	81,{
+	mes "[Dog]";
+	mes "Hey there.";
+	next;
+	menu "...Are you talking?",-;
+	
+	mes "[Dog]";
+	mes "Yeah I am. Can you do me a favor?";
+	next;
+	menu "For a talking dog? Yes!",M_YES,"You scare me. Nope. See ya.",M_NO;
+	next;
+	
+M_YES:
+	mes "[Dog]";
+	mes "I've finally condensed every single terrible doge joke into an item.";
+	next;
+	mes "But I need several items to form its container.";
+	next;
+	menu "What do I need?",L_List,"Got the stuff right here!",L_Make,"Nope, too much work.",M_NO;
+	next;
+
+L_List:	
+	mes "3 Puppy Headbands";
+	mes "750 Golden Hair";
+	mes "1 Hair band";
+	next;
+	mes "Good luck.";
+	close;
+
+M_NO:
+	mes "[Dog]";
+	mes "The jokes will never die...";
+	close;
+
+L_Make:
+	mes "[Dog]";
+	mes "Here goes nothing!";
+	next;
+
+	if(countitem(5118) < 3 || countitem(1060) < 750 ||	countitem(2210) < 1 ) goto L_NOITEMS;
+	
+	delitem 5118,3;
+	delitem 1060,750;
+	delitem 2210,1;
+	
+	mes "[Dog]";
+	mes "Success!";
+	next;
+	getitem 5182, 1;
+	mes "[Dog]";
+	mes "Take this terrible thing from my sight, and never again speak of it.";
+	close;
+	
+L_NOITEMS:
+	mes "[Dog]";
+	mes "I think you missed something;";
+	emotion e_hmm;
+	mes "Here's the list:";
+	next;
+	goto L_List;
+
+	
+}
